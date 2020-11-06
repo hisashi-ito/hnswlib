@@ -23,6 +23,7 @@ index.init_index(max_elements=num_elements//2, ef_construction=100, M=16)
 index.set_num_threads(4)
 index.add_items(data1)
 
+# cosine だからベクトルの正規化(norm)で割り算している点もO.K.
 for i, v in enumerate(data1):
     labels, distances = index.knn_query(v, 30)
     scores = 1 - distances
